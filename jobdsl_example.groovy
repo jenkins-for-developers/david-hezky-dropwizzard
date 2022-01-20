@@ -9,10 +9,12 @@ def generuj_dobry_job_pro_atym(String path, String suffix, Map m, String shellCm
         jdk('OpenJDK 8')
 
         scm {
-            remote {
-                github("jenkins-for-developers/$JMENO-$PRIJMENI-${suffix}", "https")
+            git {
+                remote {
+                    github("jenkins-for-developers/$JMENO-$PRIJMENI-${suffix}", "https")
+                }
+                branch("origin/$m.branch")
             }
-            branch("origin/$m.branch")
         }
 
         triggers {
