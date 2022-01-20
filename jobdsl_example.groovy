@@ -18,8 +18,11 @@ def generuj_dobry_job_pro_atym(String path, String suffix, Map m, String shellCm
         }
 
         triggers {
-            scm('@daily')
+            githubPush()
+            scm("@daily") {
+            }
         }
+
 
         wrappers {
             colorizeOutput()
