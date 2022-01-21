@@ -20,13 +20,13 @@ boolean isPR() {
 
 node {
   if (isDevelop()) {
-    pipeline = readTrusted('develop.Jenkinsfile')
+    pipeline = readTrusted('jenkins/develop.Jenkinsfile')
   } else if (isMain()) {
-    pipeline = readTrusted('main.Jenkinsfile')
+    pipeline = readTrusted('jenkins/main.Jenkinsfile')
   } else if (isPR()){
-    pipeline = readTrusted('pr.Jenkinsfile')
+    pipeline = readTrusted('jenkins/pr.Jenkinsfile')
   } else {
-    pipeline = readTrusted('feature.Jenkinsfile')
+    pipeline = readTrusted('jenkins/feature.Jenkinsfile')
   }
 }
 
